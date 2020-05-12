@@ -1,14 +1,14 @@
-from datetime import datetime
+import time
 
 
 def decorator(func):
 
-    start_time = datetime.now()
+    start_time = time.time()
 
     def wrapper(*args, **kwargs):
-        result = [func(*args, **kwargs) for _ in range(5)]
-        print(result)
-        end_time = datetime.now()
+        for _ in range(5000):
+            result = func(*args, **kwargs)
+        end_time = time.time()
         prog_time = end_time - start_time
         print(f'Program time: {prog_time} seconds ')
         return result
@@ -19,11 +19,11 @@ def decorator(func):
 @decorator
 def my_sum(a, b):
     return a + b
-my_sum(5000000000, 455688321546879831)
+print(my_sum(51354982324, 455688321546879831))
+
 
 @decorator
 def some_func(a, b, c):
     return a**b - c**c
 
-some_func(20, 50, 40)
-
+print(some_func(20, 50, 40))
