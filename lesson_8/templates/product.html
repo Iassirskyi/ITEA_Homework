@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% if product_category %}
+    <title>{{category[product_category]}}</title>
+    {%endif%}
+    {% if product_category %}
+    <title>{{category[product_category]}}</title>
+    {%endif%}
+</head>
+<body>
+   {%if product_category%}
+    <h2> Catalog </h2>
+   {% endif %}
+    {% for product in category %}
+        <p>
+    <h3> <a href="{{category[product]}}"> {{category[product]}}</a></h3>
+
+        </p>
+    {% endfor %}
+
+</body>
+</html>

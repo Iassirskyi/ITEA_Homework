@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home Page</title>
+</head>
+<body>
+    <h2> Catalog </h2>
+    {% for product in product_category %}
+        <p>
+    <h3> <a href="{{product_category[product]}}"> {{product_category[product]}}</a></h3>
+
+        </p>
+    {% endfor %}
+
+</body>
+</html>
